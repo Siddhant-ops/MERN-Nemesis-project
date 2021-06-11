@@ -1,0 +1,276 @@
+$font-color: #e2e2e2;
+$primary: rgb(23, 22, 22);
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&display=swap");
+
+.lockScreen_Container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+
+  .box {
+    z-index: 1;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    height: 20vh;
+    width: 20vh;
+    background-color: $primary;
+    border-radius: 50%;
+    animation: zoom 3s ease forwards;
+    -webkit-animation: zoom 3s ease forwards;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  & > img {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .entryLoginContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .imgContainer {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    .inputContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 1.3rem;
+        padding: 0.5rem;
+        background-color: rgba($color: #ffffff, $alpha: 0.7);
+        transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -ms-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        &:focus {
+          background-color: rgba($color: #ffffff, $alpha: 0.9);
+        }
+      }
+
+      button {
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1.3rem;
+        color: $font-color;
+        background-color: #131313be;
+        padding: 0.3rem 1rem;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+        transition: 0.3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -ms-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        &:hover {
+          background-color: $font-color;
+          color: #131313be;
+        }
+      }
+    }
+  }
+
+  .dateTime_Container {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    color: $font-color;
+    transform: translate(-2%, -5%);
+    -webkit-transform: translate(-2%, -5%);
+    -moz-transform: translate(-2%, -5%);
+    -ms-transform: translate(-2%, -5%);
+    -o-transform: translate(-2%, -5%);
+
+    h1 {
+      font-family: "Fira Sans Extra Condensed", sans-serif;
+      letter-spacing: 2px;
+      font-size: 8rem;
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .batteryStatus_Container {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    transform: translate(-2%, -5%);
+    color: $font-color;
+    -webkit-transform: translate(-2%, -5%);
+    -moz-transform: translate(-2%, -5%);
+    -ms-transform: translate(-2%, -5%);
+    -o-transform: translate(-2%, -5%);
+  }
+}
+
+/* Animations */
+
+@keyframes zoom {
+  0% {
+    transform: scale(40);
+    -webkit-transform: scale(40);
+    -moz-transform: scale(40);
+    -ms-transform: scale(40);
+    -o-transform: scale(40);
+  }
+
+  100% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+  }
+}
+
+@-o-keyframes zoom {
+  0% {
+    transform: scale(40);
+    -webkit-transform: scale(40);
+    -moz-transform: scale(40);
+    -ms-transform: scale(40);
+    -o-transform: scale(40);
+  }
+
+  100% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+  }
+}
+
+@-moz-keyframes zoom {
+  0% {
+    transform: scale(40);
+    -webkit-transform: scale(40);
+    -moz-transform: scale(40);
+    -ms-transform: scale(40);
+    -o-transform: scale(40);
+  }
+
+  100% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+  }
+}
+
+@-webkit-keyframes zoom {
+  0% {
+    transform: scale(40);
+    -webkit-transform: scale(40);
+    -moz-transform: scale(40);
+    -ms-transform: scale(40);
+    -o-transform: scale(40);
+  }
+
+  100% {
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    -o-transform: scale(0.1);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .lockScreen_Container {
+    .box {
+      display: none;
+    }
+
+    & > img {
+      height: 100%;
+    }
+
+    .entryLoginContainer {
+      top: 25%;
+      transform: translate(-50%, -25%);
+      -webkit-transform: translate(-50%, -25%);
+      -moz-transform: translate(-50%, -25%);
+      -ms-transform: translate(-50%, -25%);
+      -o-transform: translate(-50%, -25%);
+
+      .imgContainer {
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+    .dateTime_Container {
+      & > h1 {
+        font-size: 3rem;
+      }
+
+      & > h2 {
+        font-size: 1.5rem;
+      }
+    }
+    .batteryStatus_Container {
+      & > h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .lockScreen_Container {
+    .batteryStatus_Container {
+      top: 3%;
+    }
+  }
+}

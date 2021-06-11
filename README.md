@@ -1,3 +1,60 @@
+# Hey yo welcome to my repo!
+
+## Ok so this is a MERN project.
+
+### Split up in 2 sections
+
+- project_nemesis contains the react project.
+- project_nemesis_API contains the Node-Express API.
+
+## Intructions to start
+
+```bash
+cd project_nemesis
+```
+
+```bash
+npm i
+```
+
+### To run the project
+
+```bash
+npm start
+```
+
+## At the same time, start the API, run the following command in `project_nemesis` folder
+
+```bash
+cd project_nemesis_API
+```
+
+```bash
+npm i
+```
+
+### To start API in Development mode
+
+```bash
+npm run dev
+```
+
+### To start API in Production mode
+
+```bash
+npm start
+```
+
+## Make sure to create a .env file in the root folder and add the environment variables
+
+```
+PORT=5000
+MONGODB_URI=UR MONGODB URI
+SECRET=NEMESIS
+```
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import LockScreen from "./Components/LockScreen/LockScreen";
+import "./App.css";
+import { Route, Switch } from "react-router";
+import HomeScreen from "./Components/HomeScreen/HomeScreen";
+import { useEffect, useState } from "react";
+import parseJwt from "./Utils/helpers";
 
 function App() {
+  const [checkUser, setCheckUser] = useState(false);
+
+  const token = localStorage.getItem("NemesisToken");
+
+  useEffect(() => {
+    if (token) {
+      var Tokenexp = new Date(0);
+      Tokenexp.setUTCSeconds(parseJwt(token).exp);
+      if (Date.now() < +Tokenexp) {
+        setCheckUser(true);
+      }
+    }
+  }, [token]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        {!checkUser && <Route path="/" component={LockScreen} />}
+        {checkUser && <Route exact path="/" component={HomeScreen} />}
+      </Switch>
     </div>
   );
 }
